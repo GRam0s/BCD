@@ -90,6 +90,18 @@ modify column estado char (2) default 'MG';
 alter table empregado
 add primary key (cpf_funcionario);
 
+alter table empregado modify cpf_funcionario int not null;
+alter table empregado drop primary key;
+
+alter table empregado
+add primary key (cod_funcionario,cpf_funcionario);
+
+create table tipo_produtos (
+cod_tipo_produto int auto_increment primary key not null,
+tipo_produto varchar(255) not null,
+index (cod_tipo_produto)
+);
+
 
 
 
